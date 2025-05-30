@@ -232,7 +232,10 @@ class ChemicalReaction:
         except Exception as err:
             raise ReactionException(f"Template generation failed with message: {err}")
 
-        return self.canonical_template, self.retro_template
+        # return self.canonical_template, self.retro_template
+        print("WARNING: CHANGING ORI code")
+        # return self._canonical_template, self._retro_template
+        return canonical_smarts, retro_smarts
 
     @staticmethod
     @wrapt_timeout_decorator.timeout(
